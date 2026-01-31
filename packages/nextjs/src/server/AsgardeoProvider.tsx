@@ -194,6 +194,10 @@ const AsgardeoServerProvider: FC<PropsWithChildren<AsgardeoServerProviderProps>>
       switchOrganization={switchOrganization}
       brandingPreference={brandingPreference}
       createOrganization={createOrganization}
+      getDecodedIdToken={async () => await asgardeoClient.getDecodedIdToken(sessionId)}
+      getIdToken={async () => await asgardeoClient.getIdToken(sessionId)}
+      getAccessToken={async () => await asgardeoClient.getAccessToken(sessionId)}
+      exchangeToken={async (config) => await asgardeoClient.exchangeToken(config, sessionId)}
     >
       {children}
     </AsgardeoClientProvider>
